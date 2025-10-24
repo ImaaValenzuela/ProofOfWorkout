@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="800dp"
+    android:height="600dp"
+    android:viewportWidth="800"
+    android:viewportHeight="600">
+
+    <!-- Pesas izquierdas -->
+    <group android:name="leftWeights">
+        <path
+            android:name="leftBar1"
+            android:pathData="M200,280 h18 v70 h-18 z"
+            android:fillColor="#ef4444"
+            android:fillAlpha="0"/>
+        <path
+            android:name="leftBar2"
+            android:pathData="M225,265 h18 v100 h-18 z"
+            android:fillColor="#ef4444"
+            android:fillAlpha="0"/>
+    </group>
+
+    <!-- Pesas derechas -->
+    <group android:name="rightWeights">
+        <path
+            android:name="rightBar1"
+            android:pathData="M582,280 h18 v70 h-18 z"
+            android:fillColor="#ef4444"
+            android:fillAlpha="0"/>
+        <path
+            android:name="rightBar2"
+            android:pathData="M557,265 h18 v100 h-18 z"
+            android:fillColor="#ef4444"
+            android:fillAlpha="0"/>
+    </group>
+
+    <!-- Letra P -->
+    <group android:name="letterP">
+        <path
+            android:name="pPath"
+            android:pathData="M270,250 L270,370 M270,250 L340,250 Q380,250 380,285 Q380,320 340,320 L270,320"
+            android:strokeColor="#ef4444"
+            android:strokeWidth="40"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:fillColor="@android:color/transparent"
+            android:trimPathStart="0"
+            android:trimPathEnd="0"/>
+    </group>
+
+    <!-- Letra W -->
+    <group android:name="letterW">
+        <path
+            android:name="wPath"
+            android:pathData="M320,250 L355,370 L390,260 L425,370 L460,250"
+            android:strokeColor="#8b5cf6"
+            android:strokeWidth="38"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:fillColor="@android:color/transparent"
+            android:trimPathStart="0"
+            android:trimPathEnd="0"/>
+    </group>
+
+    <!-- Diamante -->
+    <group
+        android:name="diamondGroup"
+        android:pivotX="460"
+        android:pivotY="230"
+        android:scaleX="0"
+        android:scaleY="0">
+        <path
+            android:name="diamondOuter"
+            android:pathData="M460,195 L490,220 L490,242 L460,275 L430,242 L430,220 Z"
+            android:fillColor="#a855f7"
+            android:strokeColor="#7c3aed"
+            android:strokeWidth="3"/>
+        <path
+            android:name="diamondLines"
+            android:pathData="M460,195 L460,275 M430,220 L490,220 M430,242 L490,242 M430,220 L460,275 M490,220 L460,275"
+            android:strokeColor="#9333ea"
+            android:strokeWidth="2.5"/>
+    </group>
+
+</vector>

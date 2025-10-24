@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/icon">
+
+    <!-- Animación pesas izquierdas -->
+    <target
+        android:name="leftBar1"
+        android:animation="@animator/fade_in_weights"/>
+    <target
+        android:name="leftBar2"
+        android:animation="@animator/fade_in_weights_delayed"/>
+
+    <!-- Animación pesas derechas -->
+    <target
+        android:name="rightBar1"
+        android:animation="@animator/fade_in_weights"/>
+    <target
+        android:name="rightBar2"
+        android:animation="@animator/fade_in_weights_delayed"/>
+
+    <!-- Animación letra P -->
+    <target
+        android:name="pPath"
+        android:animation="@animator/draw_letter_p"/>
+
+    <!-- Animación letra W -->
+    <target
+        android:name="wPath"
+        android:animation="@animator/draw_letter_w"/>
+
+    <!-- Animación diamante -->
+    <target
+        android:name="diamondGroup"
+        android:animation="@animator/scale_diamond"/>
+
+</animated-vector>
