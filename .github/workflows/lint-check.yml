@@ -6,14 +6,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup JDK
         uses: actions/setup-java@v3
         with:
           java-version: 17
           distribution: temurin
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: Run Detekt
         run: ./gradlew detekt
+
       - name: Run Ktlint
         run: ./gradlew ktlintCheck
+
       - name: Run Android Lint
         run: ./gradlew lint
