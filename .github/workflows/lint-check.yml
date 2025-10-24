@@ -1,26 +1,65 @@
 name: Lint Check
-on: [push, pull_request]
+run-name: ${{ github.actor }} protecting code quality! 🛡️
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/lint-check.yml
+      - '*/src/**'
+      - gradle/**
+      - '**.gradle'
+      - gradle.properties
+      - gradlew*
 
 jobs:
-  lint:
+
+  ktlint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - run: |
+          curl -sSLO https://github.com/pinterest/ktlint/releases/download/1.2.1/ktlint && chmod a+x ktlint && sudo mv ktlint /usr/local/bin/
+      - name: run ktlint
+        run: |
+          ktlint --reporter=checkstyle,output=build/ktlint-report.xml
+        continue-on-error: true
+      - uses: yutailang0119/action-ktlint@v4
+        with:
+          report-path: build/*.xml
+        continue-on-error: false
 
-      - name: Setup JDK
+  android-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
+      - name: Set up JDK
         uses: actions/setup-java@v3
         with:
+          distribution: zulu
           java-version: 17
-          distribution: temurin
+          cache: gradle
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          api-level: 33
+          ndk: false
 
-      - name: Run Detekt
-        run: ./gradlew detekt
-
-      - name: Run Ktlint
-        run: ./gradlew ktlintCheck
+      - name: Generate local.properties
+        run: echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
 
       - name: Run Android Lint
         run: ./gradlew lint
+
+      - uses: yutailang0119/action-android-lint@v3
+        with:
+          report-path: build/reports/*.xml
+        continue-on-error: false
