@@ -1,0 +1,11 @@
+style:
+  MagicNumber:
+    active: true
+  MaxLineLength:
+    active: true
+    maxLineLength: 120
+naming:
+  FunctionNaming:
+    active: true
+  VariableNaming:
+    active: true
