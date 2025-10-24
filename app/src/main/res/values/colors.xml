@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ========================= -->
+    <!-- 🎨 PRIMARY PALETTE -->
+    <!-- ========================= -->
+
+    <!-- Main red: used for action buttons (CTA) -->
+    <color name="principal_red">#DF2B34</color>
+
+    <!-- Dark red: used for hover or pressed states -->
+    <color name="dark_red">#B22129</color>
+
+    <!-- Light red: used for illustrations or light backgrounds -->
+    <color name="light_red">#F5C6C8</color>
+
+
+    <!-- ========================= -->
+    <!-- ⚫ NEUTRAL COLORS -->
+    <!-- ========================= -->
+
+    <!-- Base black -->
+    <color name="black">#0D0D0D</color>
+
+    <!-- Very dark gray: main background -->
+    <color name="dark_gray">#1A1A1A</color>
+
+    <!-- Medium gray: borders or secondary icons -->
+    <color name="gray">#555555</color>
+
+    <!-- Light gray: secondary text or dividers -->
+    <color name="light_gray">#BFBFBF</color>
+
+    <!-- Pure white -->
+    <color name="white">#FFFFFF</color>
+
+
+    <!-- ========================= -->
+    <!-- 🌈 COMPLEMENTARY COLORS -->
+    <!-- ========================= -->
+
+    <!-- Purple: NFTs, blockchain, achievements -->
+    <color name="purple">#6C63FF</color>
+
+    <!-- Blue: statistics or progress -->
+    <color name="blue">#007BFF</color>
+
+    <!-- Green: saved workouts or validations -->
+    <color name="green">#28A745</color>
+
+    <!-- Orange: reminders or soft alerts -->
+    <color name="orange">#FF9F43</color>
+
+    <!-- Error red: alerts or failures -->
+    <color name="error_red">#E63946</color>
+
+
+    <!-- ========================= -->
+    <!-- 🧱 BACKGROUNDS & SURFACES -->
+    <!-- ========================= -->
+
+    <!-- Soft white: alternative background -->
+    <color name="soft_white">#F8F9FA</color>
+
+    <!-- Soft dark gray: card background -->
+    <color name="soft_dark">#212121</color>
+
+    <!-- Medium dark gray: secondary buttons or input fields -->
+    <color name="soft_dark2">#2C2C2C</color>
+
+</resources>
