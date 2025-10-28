@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProofOfWorkout">
         <activity
+            android:name=".view.activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activities.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activities.HomeActivity"
             android:exported="true"
             android:theme="@style/Theme.App.Starting">
