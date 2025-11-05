@@ -2,24 +2,25 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="24dp"
     android:background="@color/white">
 
-    <!-- Título principal -->
+    <!-- Title -->
     <TextView
         android:id="@+id/textWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to Proof Of Workout 🏋️"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Contenido principal -->
+    <!-- Subtitle / Description -->
     <TextView
         android:id="@+id/textDescription"
         android:layout_width="wrap_content"
@@ -29,6 +30,28 @@
         app:layout_constraintTop_toBottomOf="@id/textWelcome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="16dp" />
+
+    <!-- Button: New Session -->
+    <Button
+        android:id="@+id/btnWorkout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="New Session"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button: History -->
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="View Workout History"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnWorkout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
