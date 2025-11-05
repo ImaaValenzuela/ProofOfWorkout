@@ -36,6 +36,10 @@ class HomeActivity : AppCompatActivity() {
         binding.btnHistory.setOnClickListener {
             startActivity(Intent(this, WorkoutHistoryActivity::class.java))
         }
+
+        binding.btnAchievements.setOnClickListener {
+            startActivity(Intent(this, AchievementsActivity::class.java))
+        }
     }
 
     private fun checkSession() {
