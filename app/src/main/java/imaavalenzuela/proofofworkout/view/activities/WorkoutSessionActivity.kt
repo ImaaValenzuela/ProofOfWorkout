@@ -1,6 +1,7 @@
 package imaavalenzuela.proofofworkout.view.activities
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +21,7 @@ import java.util.Date
 class WorkoutSessionActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWorkoutSessionBinding
     private val gson = Gson()
-    private val prefs by lazy { getSharedPreferences("workouts:prefs", Context.MODE_PRIVATE) }
+    private val prefs by lazy { getSharedPreferences("workouts_prefs", Context.MODE_PRIVATE) }
     private val workouts = mutableListOf<WorkoutSession>()
     private var currentExercises = mutableListOf<Exercise>()
 
@@ -52,6 +53,10 @@ class WorkoutSessionActivity : AppCompatActivity() {
         workouts.add(newSession)
         saveWorkouts()
         currentExercises = mutableListOf()
+
+        val intent = Intent(this, WorkoutActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun saveWorkouts(){

@@ -20,7 +20,6 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // ✅ Inicializar binding correctamente
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -29,17 +28,33 @@ class HomeActivity : AppCompatActivity() {
 
         checkSession()
 
-        binding.btnWorkout.setOnClickListener {
-            startActivity(Intent(this, WorkoutSessionActivity::class.java))
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+
+                R.id.nav_home -> {
+                    // Ya estás en Home, no hacer nada
+                    true
+                }
+
+                R.id.nav_routines -> {
+                    startActivity(Intent(this, WorkoutActivity::class.java))
+                    true
+                }
+
+                R.id.nav_achievements -> {
+                    startActivity(Intent(this, AchievementsActivity::class.java))
+                    true
+                }
+
+                R.id.nav_profile -> {
+                    startActivity(Intent(this, ProfileActivity::class.java))
+                    true
+                }
+
+                else -> false
+            }
         }
 
-        binding.btnHistory.setOnClickListener {
-            startActivity(Intent(this, WorkoutHistoryActivity::class.java))
-        }
-
-        binding.btnAchievements.setOnClickListener {
-            startActivity(Intent(this, AchievementsActivity::class.java))
-        }
     }
 
     private fun checkSession() {
