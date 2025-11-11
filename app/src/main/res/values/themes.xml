@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ProofOfWorkout" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.ProofOfWorkout" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
@@ -11,6 +11,6 @@
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/icon</item>
         <item name="windowSplashScreenAnimationDuration">1500</item>
-        <item name="postSplashScreenTheme">@style/Base.Theme.ProofOfWorkout</item>
+        <item name="postSplashScreenTheme">@style/Theme.ProofOfWorkout</item>
     </style>
 </resources>

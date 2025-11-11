@@ -12,30 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProofOfWorkout">
         <activity
-            android:name=".view.activities.ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activities.WorkoutActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activities.AchievementsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activities.WorkoutHistoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activities.WorkoutSessionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activities.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activities.LoginActivity"
+            android:name=".view.activities.AuthActivity"
             android:exported="false" />
         <activity
             android:name=".view.activities.HomeActivity"
-            android:exported="true"
-            android:theme="@style/Theme.App.Starting">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

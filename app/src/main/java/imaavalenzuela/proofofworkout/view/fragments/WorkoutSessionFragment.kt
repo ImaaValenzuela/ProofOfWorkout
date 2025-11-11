@@ -1,35 +1,46 @@
-package imaavalenzuela.proofofworkout.view.activities
+package imaavalenzuela.proofofworkout.view.fragments
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.text.intl.Locale
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import imaavalenzuela.proofofworkout.R
+import androidx.navigation.fragment.findNavController
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import imaavalenzuela.proofofworkout.R
-import imaavalenzuela.proofofworkout.databinding.ActivityWorkoutSessionBinding
+import imaavalenzuela.proofofworkout.databinding.FragmentWorkoutSessionBinding
 import imaavalenzuela.proofofworkout.model.Exercise
 import imaavalenzuela.proofofworkout.model.WorkoutSession
 import java.text.SimpleDateFormat
-import java.time.LocalDate
 import java.util.Date
+import java.util.Locale
 
-class WorkoutSessionActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityWorkoutSessionBinding
+class WorkoutSessionFragment : Fragment() {
+
+    private var _binding: FragmentWorkoutSessionBinding? = null
+    private val binding get() = _binding!!
+
     private val gson = Gson()
-    private val prefs by lazy { getSharedPreferences("workouts_prefs", Context.MODE_PRIVATE) }
     private val workouts = mutableListOf<WorkoutSession>()
     private var currentExercises = mutableListOf<Exercise>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        binding = ActivityWorkoutSessionBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    private val prefs by lazy {
+        requireContext().getSharedPreferences("workouts_prefs", Context.MODE_PRIVATE)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentWorkoutSessionBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         loadWorkouts()
 
@@ -39,8 +50,8 @@ class WorkoutSessionActivity : AppCompatActivity() {
 
     private fun loadWorkouts() {
         val json = prefs.getString("workout_list", null)
-        if(json != null){
-            val type = object : TypeToken<MutableList<WorkoutSession>>(){}.type
+        if (json != null) {
+            val type = object : TypeToken<MutableList<WorkoutSession>>() {}.type
             val saved = gson.fromJson<MutableList<WorkoutSession>>(json, type)
             workouts.addAll(saved)
         }
@@ -48,18 +59,16 @@ class WorkoutSessionActivity : AppCompatActivity() {
 
     private fun saveWorkoutSession() {
         val sessionId = System.currentTimeMillis()
-        val date = SimpleDateFormat("dd/MM/yyyy HH:mm", java.util.Locale.getDefault()).format(Date())
+        val date = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault()).format(Date())
         val newSession = WorkoutSession(sessionId, date, currentExercises)
         workouts.add(newSession)
         saveWorkouts()
-        currentExercises = mutableListOf()
+        currentExercises.clear()
 
-        val intent = Intent(this, WorkoutActivity::class.java)
-        startActivity(intent)
-        finish()
+        findNavController().navigate(R.id.workoutFragment)
     }
 
-    private fun saveWorkouts(){
+    private fun saveWorkouts() {
         val json = gson.toJson(workouts)
         prefs.edit().putString("workout_list", json).apply()
     }
@@ -78,5 +87,10 @@ class WorkoutSessionActivity : AppCompatActivity() {
             binding.etSets.text?.clear()
             binding.etWeight.text?.clear()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
