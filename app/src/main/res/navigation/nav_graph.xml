@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <!-- HOME -->
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="imaavalenzuela.proofofworkout.view.fragments.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- WORKOUT (subgraph embebido) -->
+    <navigation
+        android:id="@+id/nav_routines"
+        app:startDestination="@id/workoutFragment">
+
+        <fragment
+            android:id="@+id/workoutFragment"
+            android:name="imaavalenzuela.proofofworkout.view.fragments.WorkoutFragment"
+            tools:layout="@layout/fragment_workout">
+            <action
+                android:id="@+id/action_to_session"
+                app:destination="@id/workoutSessionFragment" />
+            <action
+                android:id="@+id/action_to_history"
+                app:destination="@id/workoutHistoryFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/workoutSessionFragment"
+            android:name="imaavalenzuela.proofofworkout.view.fragments.WorkoutSessionFragment"
+            tools:layout="@layout/fragment_workout_session" />
+
+        <fragment
+            android:id="@+id/workoutHistoryFragment"
+            android:name="imaavalenzuela.proofofworkout.view.fragments.WorkoutHistoryFragment"
+            tools:layout="@layout/fragment_workout_history" />
+    </navigation>
+
+    <!-- ACHIEVEMENTS -->
+    <fragment
+        android:id="@+id/nav_achievements"
+        android:name="imaavalenzuela.proofofworkout.view.fragments.AchievementsFragment"
+        tools:layout="@layout/fragment_achievements" />
+
+    <!-- PROFILE -->
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="imaavalenzuela.proofofworkout.view.fragments.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
