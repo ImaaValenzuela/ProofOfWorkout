@@ -21,6 +21,15 @@
             android:textColor="@color/white"
             android:layout_marginBottom="32dp"/>
 
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/white"
+            android:contentDescription="Atrás"
+            android:layout_marginBottom="16dp"/>
         <!-- Exercise Name -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -118,6 +127,26 @@
             app:strokeWidth="2dp"
             app:cornerRadius="12dp"
             android:layout_marginBottom="12dp"/>
+
+        <!-- 🔽 Nueva sección: lista de ejercicios -->
+        <TextView
+            android:id="@+id/tvExercisesLabel"
+            android:text="Ejercicios en esta rutina"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvExercises"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="24dp" />
 
         <!-- Save Workout Button -->
         <com.google.android.material.button.MaterialButton

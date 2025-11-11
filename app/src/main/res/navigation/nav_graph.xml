@@ -17,6 +17,16 @@
         app:startDestination="@id/workoutFragment">
 
         <fragment
+            android:id="@+id/workoutNameFragment"
+            android:name="imaavalenzuela.proofofworkout.view.fragments.WorkoutNameFragment"
+            tools:layout="@layout/fragment_workout_name">
+
+            <action
+                android:id="@+id/action_to_session_from_name"
+                app:destination="@id/workoutSessionFragment" />
+        </fragment>
+
+        <fragment
             android:id="@+id/workoutFragment"
             android:name="imaavalenzuela.proofofworkout.view.fragments.WorkoutFragment"
             tools:layout="@layout/fragment_workout">
@@ -31,7 +41,13 @@
         <fragment
             android:id="@+id/workoutSessionFragment"
             android:name="imaavalenzuela.proofofworkout.view.fragments.WorkoutSessionFragment"
-            tools:layout="@layout/fragment_workout_session" />
+            tools:layout="@layout/fragment_workout_session">
+
+            <argument
+                android:name="workoutName"
+                app:argType="string"
+                android:defaultValue="Rutina sin nombre" />
+        </fragment>
 
         <fragment
             android:id="@+id/workoutHistoryFragment"

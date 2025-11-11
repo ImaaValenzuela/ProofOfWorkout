@@ -9,7 +9,8 @@ import imaavalenzuela.proofofworkout.R
 import imaavalenzuela.proofofworkout.model.WorkoutSession
 
 class WorkoutHistoryAdapter(
-    private val workouts: List<WorkoutSession>
+    private val workouts: List<WorkoutSession>,
+    private val onWorkoutClick: (WorkoutSession) -> Unit
 ) : RecyclerView.Adapter<WorkoutHistoryAdapter.WorkoutViewHolder>() {
 
     inner class WorkoutViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -27,6 +28,10 @@ class WorkoutHistoryAdapter(
         val workout = workouts[position]
         holder.dateText.text = workout.date
         holder.detailsText.text = "Exercises: ${workout.exercises.size}"
+
+        holder.itemView.setOnClickListener {
+            onWorkoutClick(workout)
+        }
     }
 
     override fun getItemCount() = workouts.size
