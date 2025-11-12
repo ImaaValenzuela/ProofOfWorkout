@@ -1,4 +1,4 @@
-package imaavalenzuela.proofofworkout.view.fragments
+package imaavalenzuela.proofofworkout.view.fragments.workout
 
 import android.os.Bundle
 import android.view.LayoutInflater

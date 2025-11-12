@@ -18,7 +18,7 @@
 
         <fragment
             android:id="@+id/workoutNameFragment"
-            android:name="imaavalenzuela.proofofworkout.view.fragments.WorkoutNameFragment"
+            android:name="imaavalenzuela.proofofworkout.view.fragments.workout.WorkoutNameFragment"
             tools:layout="@layout/fragment_workout_name">
 
             <action
@@ -28,7 +28,7 @@
 
         <fragment
             android:id="@+id/workoutFragment"
-            android:name="imaavalenzuela.proofofworkout.view.fragments.WorkoutFragment"
+            android:name="imaavalenzuela.proofofworkout.view.fragments.workout.WorkoutFragment"
             tools:layout="@layout/fragment_workout">
             <action
                 android:id="@+id/action_to_session"
@@ -40,7 +40,7 @@
 
         <fragment
             android:id="@+id/workoutSessionFragment"
-            android:name="imaavalenzuela.proofofworkout.view.fragments.WorkoutSessionFragment"
+            android:name="imaavalenzuela.proofofworkout.view.fragments.workout.WorkoutSessionFragment"
             tools:layout="@layout/fragment_workout_session">
 
             <argument
@@ -51,7 +51,7 @@
 
         <fragment
             android:id="@+id/workoutHistoryFragment"
-            android:name="imaavalenzuela.proofofworkout.view.fragments.WorkoutHistoryFragment"
+            android:name="imaavalenzuela.proofofworkout.view.fragments.workout.WorkoutHistoryFragment"
             tools:layout="@layout/fragment_workout_history" />
     </navigation>
 

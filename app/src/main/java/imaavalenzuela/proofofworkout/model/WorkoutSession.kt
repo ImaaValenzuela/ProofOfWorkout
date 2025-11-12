@@ -4,5 +4,5 @@ data class WorkoutSession(
     val id : Long,
     val name : String,
     val date : String,
-    val exercises : MutableList<Exercise>
+    var exercises : MutableList<Exercise>
 )
