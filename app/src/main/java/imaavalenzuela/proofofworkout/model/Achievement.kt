@@ -3,5 +3,7 @@ package imaavalenzuela.proofofworkout.model
 data class Achievement(
     val title : String,
     val description : String,
-    val unlocked : Boolean = false
+    val icon: String? = "🏆",
+    var unlocked : Boolean = false,
+    var unlockedDate: String? = null
 )

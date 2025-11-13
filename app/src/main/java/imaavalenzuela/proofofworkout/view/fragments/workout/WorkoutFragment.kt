@@ -1,4 +1,4 @@
-package imaavalenzuela.proofofworkout.view.fragments
+package imaavalenzuela.proofofworkout.view.fragments.workout
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -26,7 +26,7 @@ class WorkoutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnAddExercise.setOnClickListener {
-            findNavController().navigate(R.id.action_to_session)
+            findNavController().navigate(R.id.workoutNameFragment)
         }
 
         binding.btnSaveSession.setOnClickListener {

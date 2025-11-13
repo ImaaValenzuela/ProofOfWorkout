@@ -1,7 +1,6 @@
-package imaavalenzuela.proofofworkout.view.fragments
+package imaavalenzuela.proofofworkout.view.fragments.auth
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import imaavalenzuela.proofofworkout.R
 import imaavalenzuela.proofofworkout.databinding.FragmentRegisterBinding
-import imaavalenzuela.proofofworkout.view.activities.HomeActivity
 
 class RegisterFragment : Fragment() {
 
