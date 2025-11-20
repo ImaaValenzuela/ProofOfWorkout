@@ -1,0 +1,54 @@
+Index: app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\n    alias(libs.plugins.android.application)\n    alias(libs.plugins.kotlin.android)\n    alias(libs.plugins.detekt)\n    alias(libs.plugins.ktlint)\n}\n\nandroid {\n    namespace = \"imaavalenzuela.proofofworkout\"\n    compileSdk {\n        version = release(36)\n    }\n\n    defaultConfig {\n        applicationId = \"imaavalenzuela.proofofworkout\"\n        minSdk = 24\n        targetSdk = 36\n        versionCode = 1\n        versionName = \"1.0\"\n\n        testInstrumentationRunner = \"androidx.test.runner.AndroidJUnitRunner\"\n    }\n\n    buildTypes {\n        release {\n            isMinifyEnabled = false\n            proguardFiles(\n                getDefaultProguardFile(\"proguard-android-optimize.txt\"),\n                \"proguard-rules.pro\"\n            )\n        }\n    }\n    compileOptions {\n        sourceCompatibility = JavaVersion.VERSION_11\n        targetCompatibility = JavaVersion.VERSION_11\n    }\n    kotlinOptions {\n        jvmTarget = \"11\"\n    }\n    detekt {\n        toolVersion = \"1.23.1\"\n        config = files(\"$rootDir/detekt.yml\")\n        buildUponDefaultConfig = true\n    }\n    buildFeatures {\n        viewBinding = true\n    }\n}\n\ndependencies {\n    implementation(libs.androidx.core.ktx)\n    implementation(libs.androidx.appcompat)\n    implementation(libs.material)\n    implementation(libs.androidx.activity)\n    implementation(libs.androidx.constraintlayout)\n    implementation(libs.androidx.core.splashscreen)\n    implementation(libs.androidx.material3)\n    implementation(libs.gson)\n    implementation(libs.androidx.navigation.fragment.ktx)\n    implementation(libs.androidx.navigation.ui.ktx)\n    implementation(libs.androidx.lifecycle.viewmodel.ktx)\n    testImplementation(libs.junit)\n    androidTestImplementation(libs.androidx.junit)\n    androidTestImplementation(libs.androidx.espresso.core)\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+--- a/app/build.gradle.kts	(revision e77b7622466eb6bc809e27e516a0ca9911aec3d4)
++++ b/app/build.gradle.kts	(date 1763065732332)
+@@ -3,6 +3,7 @@
+     alias(libs.plugins.kotlin.android)
+     alias(libs.plugins.detekt)
+     alias(libs.plugins.ktlint)
++    id("com.google.gms.google-services")
+ }
+ 
+ android {
+@@ -59,6 +60,8 @@
+     implementation(libs.androidx.navigation.fragment.ktx)
+     implementation(libs.androidx.navigation.ui.ktx)
+     implementation(libs.androidx.lifecycle.viewmodel.ktx)
++    implementation(libs.firebase.bom)
++    implementation(libs.firebase.analytics)
+     testImplementation(libs.junit)
+     androidTestImplementation(libs.androidx.junit)
+     androidTestImplementation(libs.androidx.espresso.core)
+Index: gradle/libs.versions.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[versions]\nagp = \"8.13.1\"\ncoreSplashscreen = \"1.0.1\"\ngson = \"2.13.2\"\nkotlin = \"2.0.21\"\ncoreKtx = \"1.10.1\"\njunit = \"4.13.2\"\njunitVersion = \"1.1.5\"\nespressoCore = \"3.5.1\"\nappcompat = \"1.6.1\"\nmaterial = \"1.10.0\"\nactivity = \"1.8.0\"\nconstraintlayout = \"2.1.4\"\ndetekt = \"1.23.1\"\nktlint = \"12.1.0\"\nmaterial3 = \"1.4.0\"\nnavigationUiKtx = \"2.9.6\"\nlifecycleViewmodelKtx = \"2.9.4\"\n\n[libraries]\nandroidx-core-ktx = { group = \"androidx.core\", name = \"core-ktx\", version.ref = \"coreKtx\" }\nandroidx-core-splashscreen = { module = \"androidx.core:core-splashscreen\", version.ref = \"coreSplashscreen\" }\nandroidx-navigation-fragment-ktx = { module = \"androidx.navigation:navigation-fragment-ktx\", version.ref = \"navigationUiKtx\" }\nandroidx-navigation-ui-ktx = { module = \"androidx.navigation:navigation-ui-ktx\", version.ref = \"navigationUiKtx\" }\ngson = { module = \"com.google.code.gson:gson\", version.ref = \"gson\" }\njunit = { group = \"junit\", name = \"junit\", version.ref = \"junit\" }\nandroidx-junit = { group = \"androidx.test.ext\", name = \"junit\", version.ref = \"junitVersion\" }\nandroidx-espresso-core = { group = \"androidx.test.espresso\", name = \"espresso-core\", version.ref = \"espressoCore\" }\nandroidx-appcompat = { group = \"androidx.appcompat\", name = \"appcompat\", version.ref = \"appcompat\" }\nmaterial = { group = \"com.google.android.material\", name = \"material\", version.ref = \"material\" }\nandroidx-activity = { group = \"androidx.activity\", name = \"activity\", version.ref = \"activity\" }\nandroidx-constraintlayout = { group = \"androidx.constraintlayout\", name = \"constraintlayout\", version.ref = \"constraintlayout\" }\nandroidx-material3 = { group = \"androidx.compose.material3\", name = \"material3\", version.ref = \"material3\" }\nandroidx-lifecycle-viewmodel-ktx = { group = \"androidx.lifecycle\", name = \"lifecycle-viewmodel-ktx\", version.ref = \"lifecycleViewmodelKtx\" }\n\n[plugins]\nandroid-application = { id = \"com.android.application\", version.ref = \"agp\" }\nkotlin-android = { id = \"org.jetbrains.kotlin.android\", version.ref = \"kotlin\" }\ndetekt = { id = \"io.gitlab.arturbosch.detekt\", version.ref = \"detekt\" }\nktlint = { id = \"org.jlleitschuh.gradle.ktlint\", version.ref = \"ktlint\" }\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+--- a/gradle/libs.versions.toml	(revision e77b7622466eb6bc809e27e516a0ca9911aec3d4)
++++ b/gradle/libs.versions.toml	(date 1763065717975)
+@@ -1,6 +1,7 @@
+ [versions]
+ agp = "8.13.1"
+ coreSplashscreen = "1.0.1"
++firebaseBom = "34.5.0"
+ gson = "2.13.2"
+ kotlin = "2.0.21"
+ coreKtx = "1.10.1"
+@@ -22,6 +23,8 @@
+ androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+ androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationUiKtx" }
+ androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
++firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
++firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+ gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+ junit = { group = "junit", name = "junit", version.ref = "junit" }
+ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

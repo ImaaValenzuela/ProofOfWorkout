@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "133698212892",
+    "project_id": "proofofworkout-688f1",
+    "storage_bucket": "proofofworkout-688f1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133698212892:android:60042ec20ec35901fffbd9",
+        "android_client_info": {
+          "package_name": "imaavalenzuela.proofofworkout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133698212892-mm4qh8q5pv4ti4te0k7ku15iclfrcbb2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "imaavalenzuela.proofofworkout",
+            "certificate_hash": "8f0176b504b2135d67573ce6044712f27d0e79c0"
+          }
+        },
+        {
+          "client_id": "133698212892-mqrbemkff5mo9b67ts57lepo76fif20d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOYTNL8SIvqEbJpTrB2nNg9BXn-prOgt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "133698212892-mqrbemkff5mo9b67ts57lepo76fif20d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

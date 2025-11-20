@@ -1,0 +1,18 @@
+Index: build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\nplugins {\n    alias(libs.plugins.android.application) apply false\n    alias(libs.plugins.kotlin.android) apply false\n    alias(libs.plugins.detekt) apply false\n    alias(libs.plugins.ktlint) apply false\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle.kts b/build.gradle.kts
+--- a/build.gradle.kts	(revision e77b7622466eb6bc809e27e516a0ca9911aec3d4)
++++ b/build.gradle.kts	(date 1763065679321)
+@@ -4,4 +4,5 @@
+     alias(libs.plugins.kotlin.android) apply false
+     alias(libs.plugins.detekt) apply false
+     alias(libs.plugins.ktlint) apply false
+-}
+\ No newline at end of file
++    id("com.google.gms.google-services") version "4.4.4" apply false
++}

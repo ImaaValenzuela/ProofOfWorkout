@@ -2,4 +2,5 @@
     <string name="app_name">ProofOfWorkout</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_web_client_id">133698212892-mqrbemkff5mo9b67ts57lepo76fif20d.apps.googleusercontent.com</string>
 </resources>

@@ -95,6 +95,19 @@
             app:cornerRadius="12dp"
             android:elevation="0dp"/>
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Iniciar Sesión con Google"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/soft_dark2"
+            app:strokeColor="@color/principal_red"
+            app:strokeWidth="2dp"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="12dp"/>
+
         <!-- Register Link -->
         <TextView
             android:id="@+id/tvRegister"
